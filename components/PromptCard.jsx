@@ -18,6 +18,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
     navigator.clipboard?.writeText(post.prompt);
     setTimeout(() => setCopied(false), 3000);
   };
+  const email = post.creator.email;
   return (
     <div className='prompt_card '>
       <div className='flex justify-between items-start gap-5'>
@@ -34,10 +35,11 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
           />
           <div className='flex flex-col'>
             <h3 className='font-satoshi font-semibold text-gray-900 '>
-              {post.creator.username}
+              {post.creator.name}
             </h3>
             <p className='font-inter text-sm text-gray-500'>
-              {post.creator.email}
+              @{email.slice(0, 7)}
+              {Math.floor(Math.random() * 900) + 100}
             </p>
           </div>
         </div>
