@@ -5,6 +5,7 @@ import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
 
 const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
+  const email = post.creator.email;
   const router = useRouter();
   const pathName = usePathname();
   const { data: session } = useSession();
@@ -18,7 +19,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
     navigator.clipboard?.writeText(post.prompt);
     setTimeout(() => setCopied(false), 3000);
   };
-  const email = post.creator.email;
+
   return (
     <div className='prompt_card '>
       <div className='flex justify-between items-start gap-5'>
