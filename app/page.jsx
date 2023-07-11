@@ -5,7 +5,7 @@ const Home = () => {
       <h1 className='head_text text-center'>
         Discover & share
         <br className='max-md:hidden' />
-        <span className='orange_gradient text-center'> AI-Powered Prompts</span>
+        <span className='blue_gradient text-center'> AI-Powered Prompts</span>
       </h1>
       <p className='desc text-center'>
         Promptopia ia an open-source platform for AI-generated prompting tool
